@@ -18,17 +18,13 @@
   			You are not logged in	
   		</div>
   	<% end %>
-  	<% if flash[:notice] %>
+  	<% if flash[:alert] %>
 		<div class="ui warning message segment">
   			<i class="warning icon"></i>
-  			You have been warned	
+  			<%= flash[:alert] %>	
   		</div>
   	<% end %>
   	
-
-  
-
-
 
 
 

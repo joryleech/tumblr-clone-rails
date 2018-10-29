@@ -15,12 +15,11 @@
 
 	<% if !is_user_logged_in %>
 		<%= link_to '<div class="item link"> Login </div>'.html_safe, login_path %>
-	</div>
 
 	<% else %>
 
-	<%= link_to '<div class="item link"> Logout </div>'.html_safe, login_path, method: :delete, data:{confirm:"Are You Sure?"} %>
+	<%= link_to '<div class="item link"> Logout '.html_safe, login_path, method: :delete, data:{confirm:"Are You Sure?"} %></div>
 
 	<% end %>
-
+</div>
 </div>
