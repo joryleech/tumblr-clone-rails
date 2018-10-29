@@ -1,0 +1,18 @@
+<!-- Home Post Menu -->
+<div class="ui segment">
+<%= form_tag("/login", method:"post") do %>
+<p>
+	
+	<p style="big header">username:</p>
+	<%= text_field_tag(:username) %>
+	<p>
+	<p style="big header">password:</p>
+	<%= password_field_tag(:password) %>
+	<p>
+    <br>
+	<%= submit_tag("Login")%>
+
+<% end %>
+</div>
+
+

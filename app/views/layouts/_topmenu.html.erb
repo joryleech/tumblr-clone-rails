@@ -1,0 +1,26 @@
+<div class="ui blue right menu absolute">
+
+	<div class="ui search">
+	  <div class="ui icon input">
+	    <input class="prompt" type="text" placeholder="" style="width:500px;">
+	    <i class="search icon"></i>
+	  </div>
+	  <div class="results"></div>
+	</div>
+
+	
+	<div class="right menu">
+		<%= link_to '<div class="item link"> Home </div>'.html_safe, root_path %>
+		<div class="item link"> Explore </div>
+
+	<% if !is_user_logged_in %>
+		<%= link_to '<div class="item link"> Login </div>'.html_safe, login_path %>
+	</div>
+
+	<% else %>
+
+	<%= link_to '<div class="item link"> Logout </div>'.html_safe, login_path, method: :delete, data:{confirm:"Are You Sure?"} %>
+
+	<% end %>
+
+</div>

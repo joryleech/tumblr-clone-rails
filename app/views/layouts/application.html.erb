@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TumblrClone</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body style="background-color:#36465d">
+  	<%= render 'layouts/topmenu' %>
+  	<div class="ui container">
+
+	<% if !is_user_logged_in %>
+		<div class="ui warning message segment">
+  			<i class="warning icon"></i>
+  			You are not logged in	
+  		</div>
+  	<% end %>
+  	<% if flash[:notice] %>
+		<div class="ui warning message segment">
+  			<i class="warning icon"></i>
+  			You have been warned	
+  		</div>
+  	<% end %>
+  	
+
+  
+
+
+
+
+
+    	<%= yield %>
+	</div>
+  </body>
+</html>
