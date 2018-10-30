@@ -26,15 +26,24 @@
 	  Tags
 	</h4>
 	<div class="ui grid">
-		<div class="fourteen wide column">
+		<div class="thirteen wide column">
 			<% for tag in Tagged.where(:post_id => currentPost.id) do %>
 
 				<a class="ui blue small header" href="#"> <%= tag.tag %> </a> ,
 
 			<% end %>
 		</div>
-		<div class="two wide column">
-			buttons
+		<div class="three wide column right aligned">
+			<% if is_user_logged_in %>
+			<button class="ui red button"> 
+				<i class="heart icon"></i>
+			</button>
+			<% if currentPost.user_id == session[:user_id]%>
+				<button class="ui active button"> 
+					<i class="trash icon"></i>
+				</button>
+			<% end %>
+			<% end %>
 		</div>
 	</div>
 </div>
