@@ -24,8 +24,15 @@ class PostsController < ApplicationController
 		@post.title=params[:title]
 		@post.post_type=params[:type]
 		if(@post.save)
+			for tag in params[:tags].split(",")
+				@newTag = Tagged.new()
+				@newTag.tag = tag
+				@newTag.post_id = @post.id
+				@newTag.save
+			end
 			redirect_to explore_path(0)
 		else
+			#flash[:alert] = "Posting Failed: did you enter everything correctly?"
 			render 'new'
 		end
 		
