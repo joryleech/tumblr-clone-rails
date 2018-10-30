@@ -1,10 +1,10 @@
 <!-- Home Post Menu -->
 <div class="ui three item menu segment">
-  <a class=" item">Text Post</a>
-  <a class="item">Image Post</a>
-  <a class="item">Link Post</a>
+  <%= link_to 'Text Post', posts_new_path(0), class:"item" %>
+  <%= link_to 'Image Post', posts_new_path(1), class:"item" %>
+  <%= link_to 'Link Post', posts_new_path(2), class:"item" %>
 </div>
 
-<%= render 'layouts/post' %>
+
 
 

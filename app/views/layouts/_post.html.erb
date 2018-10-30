@@ -1,20 +1,27 @@
 <div class="ui segment">
-	<div class="ui centered">
-	<img class="ui centered huge image" src="https://external-preview.redd.it/zBKGV2IC4afqCyMFak5K36ZhMv8DB0HGF1BAIl39PSw.jpg?width=960&crop=smart&auto=webp&s=d4641078e3ef4bf20b7ea7e1c2b3845fddb37473" >
-	<p></p>
-	</div>
+	<% if currentPost.post_type == 1 %>
+		<a class="ui right aligned blue header" href="#"> Username </a>
+		<hr>
+		<div class="ui centered">
+		<img class="ui centered big image" src="https://external-preview.redd.it/zBKGV2IC4afqCyMFak5K36ZhMv8DB0HGF1BAIl39PSw.jpg?width=960&crop=smart&auto=webp&s=d4641078e3ef4bf20b7ea7e1c2b3845fddb37473" >
+		<p></p>
+		</div>
+    <% end %>
+
 	<h4 class="ui horizontal divider header">
 	  Description
 	</h4>
+
+
 	<div class="ui container" >
 		<div class="ui huge header">
-		Title Text
+		<%= currentPost.title %>
 		</div>
-		Description Text
+		<%= currentPost.description %>
 	</div>
 	<h4 class="ui horizontal divider header">
 	  Tags
 	</h4>
-	<a class="ui blue header" href="#"> Tag1 </a> &nbsp <a class="ui blue header" href="#"> Tag2 </a> &nbsp
+	<a class="ui blue small header" href="#"> Tag1 </a> , <a class="ui blue small header" href="#"> Tag2 </a> &nbsp
 	
 </div>

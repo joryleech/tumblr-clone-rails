@@ -22,3 +22,8 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+** Post Types
+0) Text
+1) Image
+2) Link

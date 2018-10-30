@@ -11,7 +11,8 @@
 	
 	<div class="right menu">
 		<%= link_to '<div class="item link"> Home </div>'.html_safe, root_path %>
-		<div class="item link"> Explore </div>
+		
+		<%= link_to '<div class="item link"> Explore </div>'.html_safe, explore_path(0) %>
 
 	<% if !is_user_logged_in %>
 		<%= link_to '<div class="item link"> Login </div>'.html_safe, login_path %>
