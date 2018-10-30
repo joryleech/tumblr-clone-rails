@@ -7,7 +7,7 @@ class PagesController < ApplicationController
 	end
 	def explore()
 		@page = params[:page]
-		@posts = Post.order('created_at')
+		@posts = Post.order('created_at DESC')
 	end
 private
 

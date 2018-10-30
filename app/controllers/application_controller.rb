@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   def is_user_logged_in
   	return session[:user_id]
   end
+  
   helper_method :is_user_logged_in
 
 end

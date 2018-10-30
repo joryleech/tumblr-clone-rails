@@ -1,6 +1,18 @@
 <div class="ui segment">
 
+<%= form_tag(posts_new_path, method:"post", class:"ui form") do %>
+<p>
+	<h1 style="big header">Create a new post:</h1>
+	<h4 style="small header">Title *:</h4>
+	<%= text_field_tag :title, @post.title ,  class:"ui fluid input" %>
+	<p>
+	<p style="big header">Description:</p>
+	<%= text_area_tag(:description) %>
+	<p>
+    <br>
+	<%= submit_tag("Submit",class:"ui submit button")%>
 
+<% end %>
 
 
 </div>

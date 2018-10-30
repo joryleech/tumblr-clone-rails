@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   post 'login', to: 'session#create'
   delete 'login', to: 'session#destroy'
 
-  get 'posts/:id', to: 'posts#view'
+  get 'posts/:id', to: 'posts#view', as: 'posts'
   get 'posts/new/:type', to: 'posts#new', as: "posts_new"
   post 'posts/new/:type', to: 'posts#create'
   delete 'posts/:id', to: 'posts#delete'
