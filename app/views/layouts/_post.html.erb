@@ -25,6 +25,16 @@
 	<h4 class="ui horizontal divider header">
 	  Tags
 	</h4>
-	<a class="ui blue small header" href="#"> Tag1 </a> , <a class="ui blue small header" href="#"> Tag2 </a> &nbsp
-	
+	<div class="ui grid">
+		<div class="fourteen wide column">
+			<% for tag in Tagged.where(:post_id => currentPost.id) do %>
+
+				<a class="ui blue small header" href="#"> <%= tag.tag %> </a> ,
+
+			<% end %>
+		</div>
+		<div class="two wide column">
+			buttons
+		</div>
+	</div>
 </div>
