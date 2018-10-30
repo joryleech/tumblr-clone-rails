@@ -39,7 +39,12 @@ class PostsController < ApplicationController
 	end
 
 	def delete()
+		@post = Post.find(params[:id])
+		if(session[:user_id]==@post.user_id)
+			@post.destroy()
+			redirect_to root_path
 
+		end
 	end
 
 	private

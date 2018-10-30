@@ -39,8 +39,9 @@
 				<i class="heart icon"></i>
 			</button>
 			<% if currentPost.user_id == session[:user_id]%>
-				<button class="ui active button"> 
-					<i class="trash icon"></i>
+				<%= link_to '<button class="ui active button"> 
+					<i class="trash icon"></i>'.html_safe(), posts_path(currentPost.id), method: :delete, data:{confirm:"Are You Sure?"} %>
+				
 				</button>
 			<% end %>
 			<% end %>
