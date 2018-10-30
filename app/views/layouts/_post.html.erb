@@ -6,7 +6,9 @@
 	<% if currentPost.post_type == 1 %>
 		<hr>
 		<div class="ui centered">
-		<img class="ui centered big image" src="https://external-preview.redd.it/zBKGV2IC4afqCyMFak5K36ZhMv8DB0HGF1BAIl39PSw.jpg?width=960&crop=smart&auto=webp&s=d4641078e3ef4bf20b7ea7e1c2b3845fddb37473" >
+		<img class="ui centered big image" src="
+			<%= get_image_from_post(currentPost.id) %>
+		" >
 		<p></p>
 		</div>
 
@@ -41,7 +43,6 @@
 			<% if currentPost.user_id == session[:user_id]%>
 				<%= link_to '<button class="ui active button"> 
 					<i class="trash icon"></i>'.html_safe(), posts_path(currentPost.id), method: :delete, data:{confirm:"Are You Sure?"} %>
-				
 				</button>
 			<% end %>
 			<% end %>

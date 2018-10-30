@@ -3,6 +3,12 @@
 <%= form_tag(posts_new_path, method:"post", class:"ui form") do %>
 <p>
 	<h1 style="big header">Create a new post:</h1>
+	<% if params['type'] == "1" %>
+		<h4 style="small header">Image url *:</h4>
+		<%= text_field_tag :url ,"",  class:"ui fluid input" %>
+
+	<% end %>
+
 	<h4 style="small header">Title *:</h4>
 	<%= text_field_tag :title, @post.title ,  class:"ui fluid input" %>
 	<p>

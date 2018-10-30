@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-
+	include PostsHelper
 	def view()
 		@post = Post.find(params[:id])
 	end
@@ -17,13 +17,22 @@ class PostsController < ApplicationController
 	def create()
 		if !is_user_logged_in
 			flash[:alert] = "Please log in to make posts"
-			redirect_to login_path(0)
+			#redirect_to login_path(0)
 		end
 		@post = Post.new()
 		@post.user_id=session[:user_id]
 		@post.title=params[:title]
 		@post.post_type=params[:type]
+
 		if(@post.save)
+			if(@post.post_type==1)
+				@url = params[:url]
+	    		@url = get_image_from_url(@url)
+	    		@attachedImage = AttachedImage.new()
+	    		@attachedImage.post_id=@post.id
+	    		@attachedImage.url=@url
+	    		@attachedImage.save()
+			end
 			for tag in params[:tags].split(",")
 				@newTag = Tagged.new()
 				@newTag.tag = tag
@@ -43,7 +52,6 @@ class PostsController < ApplicationController
 		if(session[:user_id]==@post.user_id)
 			@post.destroy()
 			redirect_to root_path
-
 		end
 	end
 
