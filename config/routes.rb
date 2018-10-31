@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   get 'posts/new/:type', to: 'posts#new', as: "posts_new"
   post 'posts/new/:type', to: 'posts#create'
   delete 'posts/:id', to: 'posts#delete'
+  get 'user/:user_id', to: 'posts#profile', as: 'user_profile'
 end

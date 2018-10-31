@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
 	include PostsHelper
+
 	def view()
 		@post = Post.find(params[:id])
 	end
@@ -52,6 +53,14 @@ class PostsController < ApplicationController
 		if(session[:user_id]==@post.user_id)
 			@post.destroy()
 			redirect_to root_path
+		end
+	end
+
+	def profile()
+		@username = User.find(params[:user_id]).username
+		@posts = Post.where(user_id: params[:user_id])
+		if(@posts)
+			@posts=@posts.order('created_at DESC')
 		end
 	end
 

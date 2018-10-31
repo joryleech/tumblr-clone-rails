@@ -1,6 +1,6 @@
 <div class="ui segment">
 		<a class="ui right aligned blue header" href="#">
-			<%= User.find(currentPost.user_id).username %>
+			<%= link_to User.find(currentPost.user_id).username, user_profile_path(currentPost.user_id), class: "ui link" %>
 		</a>
 	
 	<% if currentPost.post_type == 1 %>
